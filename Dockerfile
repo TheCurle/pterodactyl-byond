@@ -3,7 +3,7 @@
 FROM i386/ubuntu:bionic
 
 ENV BYOND_MAJOR=515 \
-    BYOND_MINOR=1613
+    BYOND_MINOR=1614
 
 ARG DEBIAN_FRONTEND=noninteractive
 
