@@ -3,7 +3,7 @@
 FROM i386/ubuntu:bionic
 
 ENV BYOND_MAJOR=515 \
-    BYOND_MINOR=1614
+    BYOND_MINOR=1642
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -36,15 +36,15 @@ RUN curl "http://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BY
     && cd .. \
     && rm -rf byond byond.zip /var/lib/apt/lists/*
 
-RUN locale-gen ru_RU.UTF-8
-ENV LANG ru_RU.UTF-8
-ENV LANGUAGE ru_RU:ru
-ENV LC_ALL ru_RU.UTF-8
+RUN locale-gen en_GB.UTF-8
+ENV LANG en_GB.UTF-8
+ENV LANGUAGE en_GB:ru
+ENV LC_ALL en_GB.UTF-8
 
 ENV TERM=xterm
 
 #timezone fix
-ENV TZ=Europe/Moscow
+ENV TZ=Europe/London
 RUN ln -fs /usr/share/zoneinfo/US/Pacific-New /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
 
